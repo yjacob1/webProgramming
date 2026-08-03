@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Puzzle — Beach Edition | Project 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="day">
+
+    <nav class="top-nav" aria-label="Primary navigation">
+        <div class="wrap nav-row">
+            <a href="#top" class="logo">🏖️ Beach Slide</a>
+            <ul class="nav-list">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#play">Play</a></li>
+                <li><a href="#leaderboard">Leaderboard</a></li>
+            </ul>
+            <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch day and night theme">Night Mode</button>
+        </div>
+    </nav>
+
+    <header id="top" class="hero">
+        <div class="wrap hero-grid">
+            <section>
+                <p class="eyebrow">Project 2 — Final Summer 2026 · Undergraduate Track</p>
+                <h1>15 Puzzle: Beach Edition</h1>
+                <p class="hero-sub">A themed sliding tile puzzle with three summer scenes, a live move/timer tracker, Magic Hints, and a persistent MySQL leaderboard.</p>
+                <div class="pill-row">
+                    <span class="pill">3 Themed Modes</span>
+                    <span class="pill">4×4 Board</span>
+                    <span class="pill">PHP + MySQL Leaderboard</span>
+                    <span class="pill">Offline-Safe Fallback</span>
+                </div>
+            </section>
+            <aside class="hero-card">
+                <h2>How to Play</h2>
+                <ul>
+                    <li>Click a tile next to the empty space to slide it.</li>
+                    <li>Reassemble the picture in reading order to solve.</li>
+                    <li>Use a Magic Hint if you get stuck (limited uses).</li>
+                    <li>Solving saves your score to the leaderboard.</li>
+                </ul>
+            </aside>
+        </div>
+    </header>
+
+    <main class="wrap stack">
+
+        <section id="overview" class="panel">
+            <h2>Project Overview</h2>
+            <p>
+                The Fifteen Puzzle is a classic 4×4 sliding tile challenge: fifteen numbered pieces and one empty
+                space, shuffled into a solvable arrangement that only unscrambles through careful planning. This
+                build wraps that mechanic in three beach-themed picture puzzles — <strong>Tide</strong>,
+                <strong>Breeze</strong>, and <strong>Sun</strong> — each reconstructing a distinct scene as you solve it.
+            </p>
+            <div class="cols-2">
+                <article class="card-lite">
+                    <h3>Client-Side Engineering</h3>
+                    <p>JavaScript drives shuffle generation (guaranteed solvable), move validation, solved-state
+                    detection, timing, move tracking, and the Magic Hint system.</p>
+                </article>
+                <article class="card-lite">
+                    <h3>Server-Side Integration</h3>
+                    <p>A small PHP API persists scores to MySQL (player, mode, moves, time). If the database is
+                    unreachable, the app automatically falls back to local storage so play is never blocked.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="play" class="panel">
+            <h2>Choose Your Scene</h2>
+            <div class="player-row">
+                <label class="label" for="playerName">Player Name</label>
+                <input id="playerName" class="text-input" maxlength="24" placeholder="Enter your name for the leaderboard">
+                <p class="muted small">Your name is used to save a score automatically when you solve a puzzle.</p>
+            </div>
+
+            <div class="mode-tabs" role="tablist" aria-label="Puzzle modes">
+                <button class="mode-tab active" data-mode="tide" role="tab" aria-selected="true">🌊 Tide Mode</button>
+                <button class="mode-tab" data-mode="breeze" role="tab" aria-selected="false">🌴 Breeze Mode</button>
+                <button class="mode-tab" data-mode="sun" role="tab" aria-selected="false">☀️ Sun Mode</button>
+            </div>
+
+            <section id="mode-tide" class="mode-panel active" role="tabpanel" data-mode="tide" data-image="assets/tiles/tide.svg">
+                <div class="status-row">
+                    <p>Time: <span class="js-timer">0</span>s</p>
+                    <p class="js-status">Moves: 0 | Ready to start</p>
+                    <p class="js-hints">Magic Hints left: 5</p>
+                </div>
+                <div class="board-wrap"><div class="puzzle-grid" aria-label="Tide board"></div></div>
+                <div class="btn-row">
+                    <button class="js-shuffle" type="button">Shuffle</button>
+                    <button class="js-reset" type="button">Reset</button>
+                    <button class="js-hint" type="button">Magic Hint</button>
+                </div>
+                <p class="complete-msg" aria-live="polite"></p>
+            </section>
+
+            <section id="mode-breeze" class="mode-panel" role="tabpanel" data-mode="breeze" data-image="assets/tiles/breeze.svg" hidden>
+                <div class="status-row">
+                    <p>Time: <span class="js-timer">0</span>s</p>
+                    <p class="js-status">Moves: 0 | Ready to start</p>
+                    <p class="js-hints">Magic Hints left: 5</p>
+                </div>
+                <div class="board-wrap"><div class="puzzle-grid" aria-label="Breeze board"></div></div>
+                <div class="btn-row">
+                    <button class="js-shuffle" type="button">Shuffle</button>
+                    <button class="js-reset" type="button">Reset</button>
+                    <button class="js-hint" type="button">Magic Hint</button>
+                </div>
+                <p class="complete-msg" aria-live="polite"></p>
+            </section>
+
+            <section id="mode-sun" class="mode-panel" role="tabpanel" data-mode="sun" data-image="assets/tiles/sun.svg" hidden>
+                <div class="status-row">
+                    <p>Time: <span class="js-timer">0</span>s</p>
+                    <p class="js-status">Moves: 0 | Ready to start</p>
+                    <p class="js-hints">Magic Hints left: 5</p>
+                </div>
+                <div class="board-wrap"><div class="puzzle-grid" aria-label="Sun board"></div></div>
+                <div class="btn-row">
+                    <button class="js-shuffle" type="button">Shuffle</button>
+                    <button class="js-reset" type="button">Reset</button>
+                    <button class="js-hint" type="button">Magic Hint</button>
+                </div>
+                <p class="complete-msg" aria-live="polite"></p>
+            </section>
+        </section>
+
+        <section id="leaderboard" class="panel">
+            <h2>Persistent Leaderboard</h2>
+            <p class="muted">Top scores are ranked by fewest moves, then fastest time. Records save to MySQL when available, or to your browser when it isn't.</p>
+            <div class="leaderboard-tabs" role="tablist" aria-label="Leaderboard modes">
+                <button class="lb-tab active" data-mode="tide" role="tab" aria-selected="true">🌊 Tide</button>
+                <button class="lb-tab" data-mode="breeze" role="tab" aria-selected="false">🌴 Breeze</button>
+                <button class="lb-tab" data-mode="sun" role="tab" aria-selected="false">☀️ Sun</button>
+            </div>
+            <p id="lbSource" class="muted small">Source: —</p>
+            <ol id="scoreList" class="score-list"></ol>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p class="muted small">Project 2 — Final Summer 2026 · Undergraduate Track · Solo Submission</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

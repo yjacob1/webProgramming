@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="breezeSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e7f8ff"/>
+      <stop offset="60%" stop-color="#9fd8ee"/>
+      <stop offset="100%" stop-color="#4fb3d9"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="800" fill="url(#breezeSky)"/>
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="180" cy="140" rx="90" ry="30"/>
+    <ellipse cx="250" cy="130" rx="60" ry="24"/>
+    <ellipse cx="600" cy="200" rx="80" ry="26"/>
+    <ellipse cx="670" cy="190" rx="50" ry="20"/>
+  </g>
+  <path d="M120 620 C 100 460 180 320 165 150 C 210 320 150 460 190 620 Z" fill="#2f8f4e"/>
+  <path d="M165 200 C 60 150 -20 190 -10 260 C 60 220 130 240 165 260 Z" fill="#3aa85d"/>
+  <path d="M165 210 C 280 150 360 200 350 270 C 280 230 210 245 165 265 Z" fill="#2f8f4e"/>
+  <path d="M170 230 C 90 260 40 340 70 400 C 110 330 150 300 175 280 Z" fill="#39a75c"/>
+  <path d="M170 235 C 250 260 300 340 270 400 C 230 330 190 300 172 282 Z" fill="#2c8749"/>
+  <rect x="150" y="600" width="30" height="120" fill="#6b4a2f"/>
+  <ellipse cx="165" cy="720" rx="120" ry="18" fill="#d8b168"/>
+  <g stroke="#ffffff" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round">
+    <path d="M420 300 h140 M420 300 q10 -20 30 -10 M560 300 q10 20 -10 30"/>
+    <path d="M470 380 h160 M470 380 q10 -22 32 -12 M630 380 q10 22 -10 32"/>
+  </g>
+  <g>
+    <polygon points="640,120 660,170 610,150" fill="#ff8a5c"/>
+    <polygon points="640,120 620,150 670,150" fill="#ffd166"/>
+    <line x1="640" y1="120" x2="640" y2="90" stroke="#ffffff" stroke-width="4"/>
+    <path d="M640 90 Q 700 130 660 260 Q 630 340 690 400" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.85"/>
+  </g>
+  <path d="M0 700 Q 200 660 400 700 T 800 695 V800 H0 Z" fill="#e5c98a"/>
+</svg>

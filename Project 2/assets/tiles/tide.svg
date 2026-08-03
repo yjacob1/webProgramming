@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="tideSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfeaf5"/>
+      <stop offset="55%" stop-color="#6fc9e0"/>
+      <stop offset="100%" stop-color="#1c7fa8"/>
+    </linearGradient>
+    <linearGradient id="tideWaterFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f6f96"/>
+      <stop offset="100%" stop-color="#0a5578"/>
+    </linearGradient>
+    <linearGradient id="tideWaterNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b6d92"/>
+      <stop offset="100%" stop-color="#063f57"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="800" fill="url(#tideSky)"/>
+  <circle cx="640" cy="150" r="70" fill="#fff6d8" opacity="0.9"/>
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="150" cy="120" rx="70" ry="24"/>
+    <ellipse cx="205" cy="110" rx="50" ry="20"/>
+    <ellipse cx="420" cy="90" rx="60" ry="18"/>
+  </g>
+  <rect x="0" y="380" width="800" height="150" fill="url(#tideWaterFar)"/>
+  <path d="M0 400 Q 50 380 100 400 T 200 400 T 300 400 T 400 400 T 500 400 T 600 400 T 700 400 T 800 400 V800 H0 Z" fill="url(#tideWaterNear)"/>
+  <path d="M0 470 Q 50 445 100 470 T 200 470 T 300 470 T 400 470 T 500 470 T 600 470 T 700 470 T 800 470 V800 H0 Z" fill="#084a67"/>
+  <path d="M0 560 Q 60 525 120 560 T 240 560 T 360 560 T 480 560 T 600 560 T 720 560 T 800 555 V800 H0 Z" fill="#053955"/>
+  <g stroke="#eaf9ff" stroke-width="6" fill="none" opacity="0.55" stroke-linecap="round">
+    <path d="M60 470 Q 120 450 180 470 Q 240 490 300 470"/>
+    <path d="M420 560 Q 480 540 540 560 Q 600 580 660 560"/>
+    <path d="M100 650 Q 170 630 240 650 Q 310 670 380 650"/>
+  </g>
+  <path d="M0 680 Q 100 650 200 680 T 400 680 T 600 680 T 800 675 V800 H0 Z" fill="#032a3f"/>
+  <g fill="#f4ffff" opacity="0.75">
+    <circle cx="120" cy="700" r="5"/>
+    <circle cx="300" cy="720" r="4"/>
+    <circle cx="520" cy="695" r="5"/>
+    <circle cx="700" cy="715" r="4"/>
+  </g>
+</svg>
