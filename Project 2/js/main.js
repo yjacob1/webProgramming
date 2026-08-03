@@ -129,7 +129,6 @@
             panel.querySelector(".js-reset").addEventListener("click", () => this.reset());
             panel.querySelector(".js-hint").addEventListener("click", () => this.hint());
 
-            this.tiles = this.solvedTiles();
             this.shuffle();
         }
 
